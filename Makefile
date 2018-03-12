@@ -1,5 +1,5 @@
 PRODUCT_NAME       = SPACEINVADERS99
-SOURCES            = main.c myLib.c 
+SOURCES            = main.c myLib.c SplashBackground.c SpriteSheet.c
 DKPATH             = C:/devkitARM/bin
 CCPATH             = C:/cygwin64/bin
 VBASIM             = C:/vba/VisualBoyAdvance.exe

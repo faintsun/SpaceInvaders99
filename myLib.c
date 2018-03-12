@@ -104,4 +104,16 @@ void drawBackgroundImage4(volatile const unsigned short* image) {
 
 
 
+// ****************************
+//           MODE 0
+// ****************************
+void hideSprites() {
+    for (int i = 0; i < 128; i++) {
+        shadowOAM[i].attr0 = ATTR0_HIDE;
+    }
+
+}
+
+
+
 

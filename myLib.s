@@ -335,10 +335,35 @@ drawBackgroundImage4:
 	.word	.LANCHOR0
 	.word	-2147464448
 	.size	drawBackgroundImage4, .-drawBackgroundImage4
+	.align	2
+	.global	hideSprites
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	hideSprites, %function
+hideSprites:
+	@ Function supports interworking.
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	mov	r1, #512
+	ldr	r3, .L53
+	add	r2, r3, #1024
+.L50:
+	strh	r1, [r3], #8	@ movhi
+	cmp	r3, r2
+	bne	.L50
+	bx	lr
+.L54:
+	.align	2
+.L53:
+	.word	shadowOAM
+	.size	hideSprites, .-hideSprites
 	.global	dma
 	.global	backBuffer
 	.global	frontBuffer
 	.global	videoBuffer
+	.comm	shadowOAM,1024,4
 	.data
 	.align	2
 	.set	.LANCHOR0,. + 0

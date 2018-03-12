@@ -54,7 +54,9 @@ typedef struct{
     unsigned short attr1;
     unsigned short attr2;
     unsigned short fill;
-}OBJ_ATTR;
+} OBJ_ATTR;
+
+OBJ_ATTR shadowOAM[128];
 
 typedef struct {
     int row;
@@ -162,4 +164,16 @@ void flipPage() {
 void drawBackgroundImage4(volatile const unsigned short* image) {
 
     DMANow(3, (unsigned short*)image, videoBuffer, (240*160) / 2);
+}
+
+
+
+
+
+
+void hideSprites() {
+    for (int i = 0; i < 128; i++) {
+        shadowOAM[i].attr0 = (2 << 8);
+    }
+
 }

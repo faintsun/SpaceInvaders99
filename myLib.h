@@ -281,7 +281,9 @@ typedef struct{
     unsigned short attr1;
     unsigned short attr2;
     unsigned short fill;
-}OBJ_ATTR;
+} OBJ_ATTR;
+
+OBJ_ATTR shadowOAM[128];
 
 typedef struct {
     int row;
